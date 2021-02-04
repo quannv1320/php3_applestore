@@ -7,6 +7,17 @@ Route::get('/', function () {
     return view('admin.layouts.main');
 });
 
+use Illuminate\Http\Request;
+// Route::view('upload-file', 'file-upload');
+// Route::post('save-file-upload', function(Request $request){
+
+//     $fileName = uniqid().'_'.$request->image->getClientOriginalName();
+//     $filePath = $request->file('image')->storeAs('uploads', $fileName, 'public');
+
+//     return $filePath;
+// })->name('up.load');
+
+
 Route::get('danh-muc', [CategoryController::class, 'index'])->name('cate.index');
 Route::get('danh-muc/{id}/remove', [CategoryController::class, 'remove'])->name('cate.remove');
 Route::get('danh-muc/add', [CategoryController::class, 'add'])->name('cate.add');
